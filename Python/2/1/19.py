@@ -1,0 +1,12 @@
+product = input()
+price = int(input())
+weight = int(input())
+money = int(input())
+cost = str(weight) + "кг * " + str(price) + "руб/кг"
+print("================Чек================")
+print(f"Товар:{product:>29}")
+print(f"Цена:{cost:>30}")
+print(f"Итого:{price * weight:>26}руб")
+print(f"Внесено:{money:>24}руб")
+print(f"Сдача:{money - (price * weight):>26}руб")
+print("=" * 35)

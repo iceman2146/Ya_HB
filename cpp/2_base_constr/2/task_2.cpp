@@ -1,8 +1,8 @@
 #include <iostream>
-
+using namespace std;
 int main() {
     uint64_t n(0);
-    std::cin >> n;
-    std::cout << n * (n + 1) / 2 << "\n";
+    cin >> n;
+    cout << n * (n + 1) / 2 << "\n";
     return 0;
 }

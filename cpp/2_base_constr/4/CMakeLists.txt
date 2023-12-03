@@ -1,0 +1,6 @@
+add_executable(4_1 task_1.cpp)
+add_executable(4_2 task_2.cpp)
+add_executable(4_3 task_3.cpp)
+add_executable(4_4 task_4.cpp)
+add_executable(4_5 task_5.cpp)
+add_executable(4_6 task_6.cpp)

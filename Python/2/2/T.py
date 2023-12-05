@@ -2,7 +2,7 @@
 second = str(input())
 third = str(input())
 min_length = 1
-min_str = "a"
+min_str = 'a'
 if "зайка" in first:
     min_str = first
     min_length = len(first)

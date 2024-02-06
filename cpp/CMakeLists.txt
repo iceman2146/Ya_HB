@@ -2,7 +2,5 @@ cmake_minimum_required(VERSION 3.26)
 project(CPP_handbook VERSION 0.1.0 LANGUAGES C CXX)
 
 
-add_subdirectory("2_base_constr\\1" "2_base_constr\\1")
-add_subdirectory("2_base_constr\\2" "2_base_constr\\2")
-add_subdirectory("2_base_constr\\3" "2_base_constr\\3")
-add_subdirectory("2_base_constr\\4" "2_base_constr\\4")
+add_subdirectory("2_base_constr")
+#add_subdirectory("3_StandLib")

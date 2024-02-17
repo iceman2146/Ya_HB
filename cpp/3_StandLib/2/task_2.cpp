@@ -19,3 +19,33 @@
   │ слове.                                                                  │
   └─────────────────────────────────────────────────────────────────────────┘
  */
+#include <map>
+#include <string>
+#include <set>
+#include <iostream>
+
+int main()
+{
+  std::map<char, int> letter_counter;
+
+  std::string word;
+  int wordsCount = 0;
+  while (std::cin >> word)
+  {
+    ++wordsCount;
+    std::set<char> letters(word.begin(), word.end());
+    for (char c : letters)
+    {
+      ++letter_counter[c];
+    }
+  }
+  for (auto [c, freq] : letter_counter)
+  {
+    if (freq == wordsCount)
+    {
+      std::cout << c;
+    }
+  }
+  std::cout << "\n";
+  return 0;
+}

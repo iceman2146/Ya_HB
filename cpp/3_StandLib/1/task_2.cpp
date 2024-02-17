@@ -28,3 +28,46 @@
   │ счёту.                                                                  │
   └─────────────────────────────────────────────────────────────────────────┘
  */
+#include <deque>
+#include <cstdint>
+#include <iostream>
+#include <string>
+struct student_work
+{
+  std::string student_name = "none";
+  size_t student_id = 0;
+};
+
+void get_student_job(std::deque<student_work> &, size_t &);
+int main()
+{
+  size_t students_value;
+  std::cin >> students_value;
+  std::deque<student_work> jobs_pool;
+
+  get_student_job(jobs_pool, students_value);
+
+  return 0;
+}
+void get_student_job(std::deque<student_work> &student_list, size_t &value)
+{
+  std::string job_destination = "top";
+  student_work work;
+  for (size_t i = 0; i != value; i++)
+  {
+    work.student_id = i + 1;
+    std::cin >> work.student_name >> job_destination;
+    if (job_destination == "bottom")
+      student_list.push_back(work);
+    else if (job_destination == "top")
+      student_list.push_front(work);
+  }
+  size_t max_value_works;
+  std::cin >> max_value_works;
+  for (size_t i = 0; i < max_value_works; ++i)
+  {
+    size_t x = 0;
+    std::cin >> x;
+    std::cout << student_list[x - 1].student_id << "\n";
+  }
+}

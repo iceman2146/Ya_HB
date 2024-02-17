@@ -27,3 +27,43 @@
   │ main.                                                                   │
   └─────────────────────────────────────────────────────────────────────────┘
  */
+#include <deque>
+#include <iostream>
+#include <string>
+void MakeTrain();
+int main()
+{
+    MakeTrain();
+    return 0;
+}
+void MakeTrain()
+{
+   
+    std::deque<int> Train;
+ 
+    std::string command;
+    int wagon_number;
+    size_t k;
+    while (std::cin >> command) {
+        if (command == "+left") {
+            std::cin >> wagon_number;
+            Train.push_front(wagon_number);
+        } else if (command == "+right") {
+            std::cin >> wagon_number;
+            Train.push_back(wagon_number);
+        } else if (command == "-left") {
+            std::cin >> k;
+            k = std::min(k, Train.size());
+            Train.erase(Train.begin(), Train.begin() + k);
+        } else if (command == "-right") {
+            std::cin >> k;
+            k = std::min(k, Train.size());
+            Train.erase(Train.end() - k, Train.end());
+        }
+    }
+ 
+    for (const auto& wagon_number : Train) {
+        std::cout << wagon_number << " ";
+    }
+    std::cout << "\n";
+}

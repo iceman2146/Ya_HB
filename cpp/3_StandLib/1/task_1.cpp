@@ -15,15 +15,16 @@
 
 #include <vector>
 #include <string>
+#include <iterator>
 #include <iostream>
 template<typename T>
-void Print(const T &, const char);
+void Print(const T &, std::string);
 
 int main()
 {
   std::vector<int> int_vec{1,2,3,4};
   std::string str{"SuperString"};
-  const char del='*';
+  std::string del="*";
   Print(int_vec,del);
   Print(str,del);
   return 0;
@@ -31,12 +32,12 @@ int main()
 
 
 template<typename T>
-void Print(const T &vec, const char decilimeter)
+void Print(const T &vec,std::string decilimeter)
 {
 
   for (auto i = vec.begin(); i != vec.end(); ++i)
   {
-    if (i != std::prev(vec.end()))
+    if ( std::next(i)!=std::end(vec))
       std::cout << *i << decilimeter;
     else
       std::cout << *i<<std::endl;

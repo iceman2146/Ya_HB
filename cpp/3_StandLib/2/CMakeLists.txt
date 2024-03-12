@@ -1,4 +1,5 @@
 add_executable(2_1 task_1.cpp)
+add_executable(cw_2_2 class_work_1.cpp)
 #add_executable(2_2 task_2.cpp)
 #add_executable(2_3 task_3.cpp)
 #add_executable(2_4 task_4.cpp)

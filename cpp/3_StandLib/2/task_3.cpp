@@ -1,4 +1,4 @@
-/* 
+/*
   ┌─────────────────────────────────────────────────────────────────────────┐
   │ Файловая система                                                        │
   ├─────────────────────────────────────────────────────────────────────────┤
@@ -25,3 +25,25 @@
   │ слешом.                                                                 │
   └─────────────────────────────────────────────────────────────────────────┘
  */
+#include <iostream>
+#include <set>
+#include <string>
+int main()
+{
+  std::set<std::string> Directories;
+  std::string Path;
+  while (std::getline(std::cin, Path))
+  {
+    for (size_t i = 0; i != Path.size(); ++i)
+    {
+      if (Path[i] == '/')
+      {
+        Directories.insert(Path.substr(0, i + 1));
+      }
+    }
+  }
+  for (const auto &directorie : Directories)
+  {
+    std::cout << directorie << "\n";
+  }
+}
